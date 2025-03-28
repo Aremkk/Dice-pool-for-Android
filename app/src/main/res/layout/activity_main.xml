@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8611616"
+    android:backgroundTint="#9B56F0"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="156dp"
+        android:layout_height="72dp"
+        android:background="#C5ACEB"
+        android:gravity="center"
+        android:text="This is yours Dice pool"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="398dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/D6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/d6"
+                android:text="@string/d6"
+                android:contentDescription="@string/d6"
+                android:textAlignment="viewStart"
+                android:textDirection="locale" />
+
+            <ImageButton
+                android:id="@+id/D4"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#008E4747"
+                android:src="@drawable/d4"
+                android:contentDescription="@string/d4"
+                android:textAlignment="textEnd"
+                android:textDirection="anyRtl" />
+
+            <ImageButton
+                android:id="@+id/D8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/d8"
+                android:contentDescription="@string/d8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/D10"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/d10"
+                android:contentDescription="@string/d10"/>
+
+            <ImageButton
+                android:id="@+id/D12"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#008E4747"
+                android:src="@drawable/d12"
+                android:contentDescription="@string/d12"/>
+
+            <ImageButton
+                android:id="@+id/D20"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/d20"
+                android:contentDescription="@string/d12"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginEnd="140dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <CheckBox
+            android:id="@+id/Adv"
+            android:layout_width="129dp"
+            android:layout_height="58dp"
+            android:text="Advantage"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="520dp" />
+
+        <CheckBox
+            android:id="@+id/Disadv"
+            android:layout_width="151dp"
+            android:layout_height="58dp"
+            android:text="Disadvantage"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="520dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="373dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="592dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/Plus1"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:text="@string/plus" />
+        <TextView
+            android:id="@+id/cntofdice"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="number of dice"/>
+
+        <Button
+            android:id="@+id/Minus1"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="@string/minus" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="373dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="660dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/Plus2"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/plus" />
+
+        <TextView
+            android:id="@+id/moreres"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="standart value"/>
+
+        <Button
+            android:id="@+id/Minus2"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="@string/minus" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
