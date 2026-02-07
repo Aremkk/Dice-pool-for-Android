@@ -14,11 +14,15 @@
         android:layout_height="72dp"
         android:background="#C5ACEB"
         android:gravity="center"
-        android:text="This is yours Dice pool"
+        android:text="Это ваши кубики"
+        android:textColor="#0F0E0E"
+        android:textColorHighlight="#662DEB"
+        android:textColorHint="#662DEB"
+        android:textColorLink="#662DEB"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.068" />
@@ -32,7 +36,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41">
 
 
         <LinearLayout
@@ -48,9 +53,9 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/d6"
                 android:src="@drawable/d6"
                 android:text="@string/d6"
-                android:contentDescription="@string/d6"
                 android:textAlignment="viewStart"
                 android:textDirection="locale" />
 
@@ -61,8 +66,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#008E4747"
-                android:src="@drawable/d4"
                 android:contentDescription="@string/d4"
+                android:src="@drawable/d4"
                 android:textAlignment="textEnd"
                 android:textDirection="anyRtl" />
 
@@ -72,8 +77,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/d8"
-                android:contentDescription="@string/d8"/>
+                android:contentDescription="@string/d8"
+                android:src="@drawable/d8" />
 
         </LinearLayout>
 
@@ -90,8 +95,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/d10"
-                android:contentDescription="@string/d10"/>
+                android:contentDescription="@string/d10"
+                android:src="@drawable/d10" />
 
             <ImageButton
                 android:id="@+id/D12"
@@ -100,8 +105,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#008E4747"
-                android:src="@drawable/d12"
-                android:contentDescription="@string/d12"/>
+                android:contentDescription="@string/d12"
+                android:src="@drawable/d12" />
 
             <ImageButton
                 android:id="@+id/D20"
@@ -109,8 +114,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/d20"
-                android:contentDescription="@string/d12"/>
+                android:contentDescription="@string/d12"
+                android:src="@drawable/d20" />
 
         </LinearLayout>
     </LinearLayout>
@@ -131,18 +136,19 @@
 
         <CheckBox
             android:id="@+id/Adv"
-            android:layout_width="129dp"
+            android:layout_width="172dp"
             android:layout_height="58dp"
-            android:text="Advantage"
+            android:text="Преимущество"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="76dp"
             tools:layout_editor_absoluteY="520dp" />
 
         <CheckBox
             android:id="@+id/Disadv"
-            android:layout_width="151dp"
+            android:layout_width="112dp"
             android:layout_height="58dp"
-            android:text="Disadvantage"
+            android:gravity="center_vertical"
+            android:text="Помеха"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="76dp"
             tools:layout_editor_absoluteY="520dp" />
@@ -161,20 +167,24 @@
             android:id="@+id/Plus1"
             android:layout_width="57dp"
             android:layout_height="wrap_content"
-            android:text="@string/plus" />
+            android:backgroundTint="#C5ACEB"
+            android:text="@string/plus"
+            android:textColor="#0F0E0E" />
         <TextView
             android:id="@+id/cntofdice"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="number of dice"/>
+            android:text="Количество кубиков"/>
 
         <Button
             android:id="@+id/Minus1"
             android:layout_width="57dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/minus" />
+            android:backgroundTint="#C5ACEB"
+            android:text="@string/minus"
+            android:textColor="#0F0E0E" />
     </LinearLayout>
 
     <LinearLayout
@@ -192,22 +202,43 @@
             android:layout_width="57dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@string/plus" />
+            android:backgroundTint="#C5ACEB"
+            android:text="@string/plus"
+            android:textColor="#0F0E0E" />
 
         <TextView
             android:id="@+id/moreres"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="standart value"/>
+            android:text="Плюс к значению"/>
 
         <Button
             android:id="@+id/Minus2"
             android:layout_width="57dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/minus" />
+            android:backgroundTint="#C5ACEB"
+            android:text="@string/minus"
+            android:textColor="#0F0E0E" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/Custom"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#C5ACEB"
+        android:text="Собственный куб"
+        android:textColor="#0F0E0E"
+        android:textColorLink="#C5ACEB"
+        app:iconTint="#C5ACEB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.494"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
