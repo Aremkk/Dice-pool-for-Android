@@ -59,8 +59,7 @@ public class DiceService {
         builder.show();
     }
     public void showCustomDiceDialog(int cntdDice, int chngRes, boolean Advantage, boolean Disadvantage){
-        AlertDialog.Builder builder =
-                new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
         builder.setTitle("Введите количество граней");
 
