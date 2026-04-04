@@ -1,7 +1,8 @@
 package com.example.dicepool;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -50,5 +51,9 @@ public class HistoryActivity extends AppCompatActivity {
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    public void delHistory(View v){
+        databaseHelper.clearTable();
+        recreate();
     }
 }

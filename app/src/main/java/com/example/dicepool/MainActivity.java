@@ -32,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
     int cntdDice = 1;
     int chngRes = 0;
     CheckBox Advantage, Disadvantage;
-    DiceService diceService = new DiceService(this);
+    DiceService diceService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        diceService = new DiceService(this);
         d4 = findViewById(R.id.D4);
         d6 = findViewById(R.id.D6);
         d8 = findViewById(R.id.D8);

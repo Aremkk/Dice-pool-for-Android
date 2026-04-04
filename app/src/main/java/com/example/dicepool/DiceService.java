@@ -1,21 +1,23 @@
 package com.example.dicepool;
-
+import android.content.ContentValues;
 import android.content.Context;
 import android.text.InputType;
 import android.widget.EditText;
-
+import android.database.sqlite.SQLiteDatabase;
 import androidx.appcompat.app.AlertDialog;
-
 import java.util.Arrays;
 
-public class DiceService {
+public class DiceService{
     private final Context context;
 
     public DiceService(Context context) {
         this.context = context;
     }
-    public void rollDice(int sides, int cntdDice, int chngRes, boolean Advantage, boolean Disadvantage) {
 
+    public void rollDice(int sides, int cntdDice, int chngRes, boolean Advantage, boolean Disadvantage) {
+        DatabaseHelper sqlHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
         Dice dice = new Dice(
                 sides,
                 cntdDice,
@@ -23,6 +25,7 @@ public class DiceService {
                 Advantage,
                 Disadvantage
         );
+
 
         int[] rolls = dice.Roll();
 
@@ -34,15 +37,20 @@ public class DiceService {
             builder.setMessage(
                     max + "\nРезультат бросков: " + dice.toString()
             );
-        }
-        else if (Disadvantage) {
+            cv.put(DatabaseHelper.columnRoll, "Бросок d" + sides + "+" + chngRes + " (Преимущество)");
+            cv.put(DatabaseHelper.columnResult, String.valueOf(max));
+            db.insert(DatabaseHelper.table, null, cv);
+
+        } else if (Disadvantage) {
             int min = Arrays.stream(rolls).min().getAsInt();
             builder.setTitle("Бросок d" + sides + "+" + chngRes + " (Помеха)");
             builder.setMessage(
                     min + "\nРезультат бросков: " + dice.toString()
             );
-        }
-        else {
+            cv.put(DatabaseHelper.columnRoll, "Бросок d" + sides + "+" + chngRes + " (Помеха)");
+            cv.put(DatabaseHelper.columnResult, String.valueOf(min));
+            db.insert(DatabaseHelper.table, null, cv);
+        } else {
 
             int total = dice.getTotal();
             String title = "Бросок: " + cntdDice + "d" + sides;
@@ -54,11 +62,15 @@ public class DiceService {
             builder.setMessage(
                     total + "\nРезультат бросков: " + dice.toString()
             );
+            cv.put(DatabaseHelper.columnRoll, title);
+            cv.put(DatabaseHelper.columnResult, String.valueOf(total));
+            db.insert(DatabaseHelper.table, null, cv);
         }
         builder.setCancelable(true);
         builder.show();
     }
-    public void showCustomDiceDialog(int cntdDice, int chngRes, boolean Advantage, boolean Disadvantage){
+
+    public void showCustomDiceDialog(int cntdDice, int chngRes, boolean Advantage, boolean Disadvantage) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
         builder.setTitle("Введите количество граней");
@@ -90,4 +102,4 @@ public class DiceService {
         builder.setNegativeButton("Отмена", (dialog, which) -> dialog.cancel());
         builder.show();
     }
-}
+};

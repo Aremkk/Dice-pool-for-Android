@@ -19,13 +19,18 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE users (" + columnId
+        db.execSQL("CREATE TABLE rolls (" + columnId
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + columnRoll
-                + " TEXT, " + columnResult + " INTEGER);");
+                + " TEXT, " + columnResult + " TEXT);");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,  int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+table);
         onCreate(db);
+    }
+    public void clearTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(table, null, null);
+        db.close();
     }
 }
