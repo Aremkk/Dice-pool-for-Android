@@ -40,11 +40,15 @@ public class HistoryActivity extends AppCompatActivity {
         //header.setText("Найдено элементов: " +  userCursor.getCount());
         userList.setAdapter(userAdapter);
     }
-
     @Override
     public void onDestroy(){
         super.onDestroy();
         db.close();
         userCursor.close();
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

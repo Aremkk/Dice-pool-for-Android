@@ -22,10 +22,10 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.073" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -234,10 +234,22 @@
         app:iconTint="#C5ACEB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintVertical_bias="0.197"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C5ACEB"
+        android:text="История бросков"
+        android:textColor="#0F0E0E"
+        android:onClick="openSecondActivity"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="168dp"
         tools:ignore="MissingConstraints" />
 
 

@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DicePool"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/slide_in_right" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

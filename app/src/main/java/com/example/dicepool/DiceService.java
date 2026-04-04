@@ -30,14 +30,14 @@ public class DiceService {
 
         if (Advantage) {
             int max = Arrays.stream(rolls).max().getAsInt();
-            builder.setTitle("Бросок d" + sides + " (Преимущество)");
+            builder.setTitle("Бросок d" + sides + "+" + chngRes + " (Преимущество)");
             builder.setMessage(
                     max + "\nРезультат бросков: " + dice.toString()
             );
         }
         else if (Disadvantage) {
             int min = Arrays.stream(rolls).min().getAsInt();
-            builder.setTitle("Бросок d" + sides + " (Помеха)");
+            builder.setTitle("Бросок d" + sides + "+" + chngRes + " (Помеха)");
             builder.setMessage(
                     min + "\nРезультат бросков: " + dice.toString()
             );
