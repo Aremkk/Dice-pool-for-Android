@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     public void openSecondActivity(View v) {
         Intent intent = new Intent(this, HistoryActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.xml.slide_in_right, R.xml.slide_out_left);
     }
 
 

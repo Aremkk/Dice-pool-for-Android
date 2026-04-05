@@ -50,7 +50,7 @@ public class HistoryActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        overridePendingTransition(R.xml.slide_in_right, R.xml.slide_out_left);
     }
     public void delHistory(View v){
         databaseHelper.clearTable();
