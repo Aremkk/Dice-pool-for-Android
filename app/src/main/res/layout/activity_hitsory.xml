@@ -7,45 +7,57 @@
     android:background="#D8611616"
     android:backgroundTint="#9B56F0">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/History"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="70dp"
-        android:text="История бросков"
-        android:textColor="#0F0E0E"
-        android:textColorLink="#0B0606"
-        android:textDirection="inherit"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/list"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center"
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="402dp"
-        android:layout_height="571dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
-
-    <Button
-        android:id="@+id/del"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="106dp"
-        android:backgroundTint="#C5ACEB"
-        android:onClick="delHistory"
-        android:text="Удалить историю"
-        android:textColor="#0F0E0E"
-        android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#C5ACEB"
+            android:onClick="delHistory"
+            android:text="Удалить историю"
+            android:textColor="#0F0E0E"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="История бросков"
+            android:textColor="#0F0E0E"
+            android:textColorLink="#0B0606"
+            android:textDirection="inherit"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/list"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+    </LinearLayout>>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

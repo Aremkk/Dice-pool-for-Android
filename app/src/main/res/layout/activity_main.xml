@@ -13,6 +13,7 @@
         android:id="@+id/textView"
         android:layout_width="156dp"
         android:layout_height="72dp"
+        android:layout_marginTop="20dp"
         android:background="#C5ACEB"
         android:gravity="center"
         android:text="Это ваши кубики"
